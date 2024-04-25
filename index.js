@@ -13,6 +13,7 @@ if (notesFromLocalStorage) {
     render(myNotes)
 }
 
+
 //function to render notes to the unordered list
 function render(notes) {
     let listItems = ""
