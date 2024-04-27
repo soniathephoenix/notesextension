@@ -5,7 +5,7 @@ const inputBtn = document.getElementById("input-btn") //variable for save notes 
 const emailBtn = document.getElementById("email-btn") //variable for email notes button *
 const ulEl = document.getElementById("ul-el") //variable for the unordered list that renders the inputed notes
 const deleteBtn = document.getElementById("delete-btn") //variable for delete all button
-const notesFromLocalStorage = JSON.parse( localStorage.getItem("myNotes") ) //variable for the notes stored in the local storage. Parse method used to convert string to object
+let notesFromLocalStorage = JSON.parse( localStorage.getItem("myNotes") ) //variable for the notes stored in the local storage. Parse method used to convert string to object
 console.log(notesFromLocalStorage)
 
 //if statement, stating that if there are notes on the local storage, they will be added to the array which will be rendered to the list
@@ -43,6 +43,7 @@ inputBtn.addEventListener("click", function() {
     myNotes.push(inputEl.value)
     inputEl.value = ""
     localStorage.setItem("myNotes", JSON.stringify(myNotes) )
+    notesFromLocalStorage = JSON.parse(localStorage.getItem("myNotes"))
     render(myNotes)
 })
 
